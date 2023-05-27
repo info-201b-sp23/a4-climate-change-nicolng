@@ -5,9 +5,9 @@ account: nicolng
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 9196791
-bundleId: 7270016
+bundleId: 7270039
 url: https://nicolng.shinyapps.io/a4-climate-change-nicolng/
-when: 1685162680.78186
-lastSyncTime: 1685162680.78188
+when: 1685163947.78066
+lastSyncTime: 1685163947.78069
 asMultiple: FALSE
 asStatic: FALSE

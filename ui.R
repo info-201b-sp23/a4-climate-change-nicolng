@@ -19,7 +19,7 @@ intro_tab <- tabPanel("Introduction",
                 green but in the same country also take the blame? Having a very broad data does lead to some downsides and these are only just a few of the flaws in this
                 data that we can properly assess. Implementing the amount of companies or the net worth of company can prove better information, or even ESG score can make this
                 data better."),
-             h2("In the most recent year, which country has the highest average co2 emission?"),
+             h2("In the most recent year, what is the global average co2 emission?"),
              textOutput("q1"),
              h2("Most recently, which country has the highest co2 per capita emission per capita?"),
              textOutput("q2"),
@@ -28,7 +28,9 @@ intro_tab <- tabPanel("Introduction",
              h2("Which country has the highest co2 emissions from oil?"),
              textOutput("q4"),
              h2("From land usage, which country has the highest CO2?"),
-             textOutput("q5")
+             textOutput("q5"),
+             h3("In conclusion, Asia has been emitting the most amount of carbon recently. This is not surprising to use because commodities is a big part of China. At the
+                same time, China is not active trying to go green. They are one of the few countries that did not agree to the Paris Agreement act.")
             )
 
 viz_tab <- tabPanel("Interaction Visualization",

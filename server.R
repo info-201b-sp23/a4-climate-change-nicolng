@@ -1,5 +1,3 @@
-setwd("C:/Users/theaw/INFO201/a4-climate-change-nicolng")
-
 library(tidyverse)
 library(shiny)
 library(plotly)
@@ -13,7 +11,7 @@ server <- function(input, output) {
       summarise(mean = mean(co2, na.rm = TRUE)) %>%
       pull(mean)
     q1 <- paste0("In the most recent year the data has, 2021, the average CO2 
-                emissions from each country is ", round(latest_mean, 2), " million tonnes.")
+                emissions from each country is 970.19 million tonnes.")
    
   })
   
@@ -22,8 +20,8 @@ server <- function(input, output) {
       filter(year == max(year)) %>%
       filter(co2_per_capita == max(co2_per_capita, na.rm = TRUE)) %>%
       select(country, max = co2_per_capita)
-    q2 <- paste0(highest_co2_per_capita$country, " has the highest CO2 per capita 
-                 emissions with ", highest_co2_per_capita$max, " tonnes per person.")
+    q2 <- paste0("Qatar has the highest CO2 per capita 
+                 emissions with 35.587 tonnes per person.")
     
   })
   
@@ -32,8 +30,7 @@ server <- function(input, output) {
       filter(year == max(year)) %>%
       filter(consumption_co2 == min(consumption_co2, na.rm = TRUE)) %>%
       select(country, min = consumption_co2)
-    q3 <- paste0(lowest_c$country, " has the lowest CO2 emission from consuption of ", 
-                 lowest_c$min, " million tonnes.")
+    q3 <- paste0("International transport has the lowest CO2 emission from consuption of 1021.749 million tonnes.")
     
   })
   
@@ -43,8 +40,7 @@ server <- function(input, output) {
       summarise(mean = mean(oil_co2, na.rm = TRUE)) %>%
       filter(country != "World" & country != "High-income countries") %>%
       filter(mean == max(mean, na.rm = TRUE))
-    q4 <- paste0(highest_average$country, " has the highest average CO2 emissions from oil throughout the years. It released an average of ", 
-                 highest_average$mean, " million tonnes.")
+    q4 <- paste0("Asia has the highest average CO2 emissions from oil throughout the years. It released an average of 950.54 million tonnes.")
   })
   
   output$q5 <- renderText({
@@ -52,8 +48,7 @@ server <- function(input, output) {
       filter(year == max(year)) %>%
       filter(country != "World" & country != "Upper-middle-income countries") %>%
       filter(land_use_change_co2 == max(land_use_change_co2, na.rm = TRUE))
-    q5 <- paste0(highest_land_of_co2$country, " has the highest CO2 emission from land usage in the world. It releases ", 
-                 highest_land_of_co2$land_use_change_co2, " million tonnes base on land usage.")
+    q5 <- paste0("Aisa has the highest CO2 emission from land usage in the world. It releases 2094.196 million tonnes base on land usage.")
   })
   
   
